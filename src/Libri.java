@@ -1,9 +1,10 @@
 public class Libri extends Materiale {
-    private String autore, L="L";
+    private String autore, L = "L";
     private int nrPagine, isbn;
-    private static int contatore = 0000;
-    
-    Materiale materiale = new Materiale(getCodiceInterno(), getTitolo(), getGenere(), getIdBiblioteca(), getDisponibile(), getEditore());
+    private static int contatoreL = 0;
+
+    Materiale materiale = new Materiale(getCodiceInterno(), getTitolo(), getGenere(), getIdBiblioteca(),
+            isDisponibile(), getEditore());
 
     public Libri(String codiceInterno, String titolo, String genere, String idBiblioteca, Boolean disponibile,
             String editore, String autore, int nrPagine, int isbn) {
@@ -11,10 +12,8 @@ public class Libri extends Materiale {
         this.autore = autore;
         this.nrPagine = nrPagine;
         this.isbn = isbn;
-        
-        contatore++;
-        System.out.println("codice libro: "+ L + contatore);
-        materiale.codiceInterno = L+String.format("%4d", contatore);
+
+        materiale.codiceInterno = L + String.format("%4d", contatoreL++);
     }
 
     public String getAutore() {
@@ -41,12 +40,11 @@ public class Libri extends Materiale {
         this.isbn = isbn;
     }
 
-
     @Override
     public String toString() {
         return "Libri \n"
-        + "[autore=" + autore + ",\n"
-        + ", nrPagine=" + nrPagine + ",\n"
-        + ", isbn=" + isbn + "]";
+                + "[autore=" + autore + ",\n"
+                + ", nrPagine=" + nrPagine + ",\n"
+                + ", isbn=" + isbn + "]";
     }
 }

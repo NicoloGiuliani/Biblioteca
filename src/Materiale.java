@@ -3,14 +3,14 @@ public class Materiale {
     public String codiceInterno;
     private Boolean disponibile;
 
-    public Materiale(String codiceInterno, String titolo, String genere, String idBiblioteca, Boolean disponibile, String editore) {
+    public Materiale(String codiceInterno, String titolo, String genere, String idBiblioteca, Boolean disponibile,
+            String editore) {
         this.codiceInterno = codiceInterno;
         this.titolo = titolo;
         this.genere = genere;
         this.idBiblioteca = idBiblioteca;
         this.editore = editore;
-        this.disponibile = disponibile;
-
+        this.disponibile = true;
     }
 
     public String getCodiceInterno() {
@@ -53,7 +53,8 @@ public class Materiale {
         this.editore = editore;
     }
 
-    public Boolean getDisponibile() {
+
+    public Boolean isDisponibile() {
         return disponibile;
     }
 
@@ -61,10 +62,11 @@ public class Materiale {
         this.disponibile = disponibile;
     }
 
+
     @Override
     public String toString() {
-        return "Materiale \n" +
-                "[codiceInterno=" + codiceInterno + ",\n"
+        return "Materiale \n"
+                + "[codiceInterno=" + codiceInterno + ",\n"
                 + "titolo=" + titolo + ",\n"
                 + "genere=" + genere + ",\n"
                 + "idBiblioteca=" + idBiblioteca + ",\n"
