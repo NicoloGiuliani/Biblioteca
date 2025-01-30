@@ -1,18 +1,18 @@
 public class Riviste extends Materiale {
     private String R = "R";
     private int anno, nrRivista;
-    private static int contatoreR = 0;
+    private static int contatoreR = 1;
 
-    Materiale materiale = new Materiale(getCodiceInterno(), getTitolo(), getGenere(), getIdBiblioteca(),
+    Materiale materiale = new Materiale(getTitolo(), getGenere(), getIdBiblioteca(),
             isDisponibile(), getEditore());
 
-    public Riviste(String codiceInterno, String titolo, String genere, String idBiblioteca, Boolean disponibile,
-            String editore, String r, int anno, int nrRivista) {
-        super(codiceInterno, titolo, genere, idBiblioteca, disponibile, editore);
+    public Riviste( String titolo, String genere, String idBiblioteca, Boolean disponibile,
+            String editore, int anno, int nrRivista) {
+        super(titolo, genere, idBiblioteca, disponibile, editore);
 
         this.anno = anno;
         this.nrRivista = nrRivista;
-        materiale.codiceInterno = R + String.format("%4d", contatoreR++);
+        this.codiceInterno = R + String.format("%04d", contatoreR++);
     }
 
     public int getAnno() {
@@ -34,10 +34,10 @@ public class Riviste extends Materiale {
     @Override
     public String toString() {
         return "Riviste \n"
-                + "[R=" + R + ", \n"
-                + ", anno=" + anno + ", \n"
-                + ", nrRivista=" + nrRivista + ", \n"
-                + ", materiale=" + materiale + "]";
+                + "[codice interno= " + codiceInterno + ", \n"
+                + ", anno= " + anno + ", \n"
+                + ", nrRivista= " + nrRivista + ", \n"
+                + ", materiale= " + materiale + "]";
     }
 
 }

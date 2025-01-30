@@ -3,9 +3,8 @@ public class Materiale {
     public String codiceInterno;
     private Boolean disponibile;
 
-    public Materiale(String codiceInterno, String titolo, String genere, String idBiblioteca, Boolean disponibile,
+    public Materiale(String titolo, String genere, String idBiblioteca, Boolean disponibile,
             String editore) {
-        this.codiceInterno = codiceInterno;
         this.titolo = titolo;
         this.genere = genere;
         this.idBiblioteca = idBiblioteca;

@@ -4,8 +4,8 @@ public class Biblioteca {
     private static Biblioteca biblioteca;
     private String via, città;
     private int cap, civico, id;
-    private static HashMap<String, Materiale> catalogo;
-    private static HashMap<Integer, Biblioteca> biblioteche;
+    public static HashMap<String, Materiale> catalogo = new HashMap<>();
+    public static HashMap<Integer, Biblioteca> biblioteche = new HashMap<>();
 
     public Biblioteca(String via, String città, int cap, int civico, int id) {
         this.via = via;
@@ -56,6 +56,7 @@ public class Biblioteca {
         this.id = id;
     }
 
+    
     public static void aggiungiMateriale(Materiale materiale) {
         if (materiale == null) {
             throw new IllegalArgumentException("Non puoi aggiungere un materiale nullo");
@@ -127,5 +128,4 @@ public class Biblioteca {
                 + "civico=" + civico + ",\n"
                 + "id=" + id + "\n";
     }
-
 }
